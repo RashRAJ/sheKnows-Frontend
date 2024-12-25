@@ -30,17 +30,17 @@ export function ChatWithUploads({ placeholder }: ChatWithUploadsProps) {
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage = { role: 'user', content: input };
+    const userMessage: Message = { role: 'user', content: input };
     setMessages(prev => [...prev, userMessage]);
     setInput('');
     setIsLoading(true);
 
     try {
       // TODO: Implement actual LLM API call here
-      const response = { 
-        role: 'assistant', 
-        content: 'This is a placeholder response. Implement your LLM API here.' 
-      };
+    const response: Message = { 
+    role: 'assistant', 
+    content: 'This is a placeholder response. Implement your LLM API here.' 
+    };
       setMessages(prev => [...prev, response]);
     } catch (error) {
       console.error('Failed to get response:', error);
@@ -56,14 +56,14 @@ export function ChatWithUploads({ placeholder }: ChatWithUploadsProps) {
     Array.from(files).forEach(file => {
       const reader = new FileReader();
       reader.onload = () => {
-        const message = {
-          role: 'user',
-          content: `Uploaded ${file.name}`,
-          attachments: [{
+        const message: Message = {
+        role: 'user',
+        content: `Uploaded ${file.name}`,
+        attachments: [{
             type: file.type.startsWith('image/') ? 'image' : 'document',
             url: URL.createObjectURL(file),
             name: file.name
-          }]
+        }]
         };
         setMessages(prev => [...prev, message]);
       };
