@@ -7,7 +7,11 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Send, Upload, Image, FileText } from 'lucide-react';
 
 interface Message {
+<<<<<<< HEAD
   role: 'user' | 'assistant';
+=======
+  role: 'user' | 'assistant';  // Fixed type to be union
+>>>>>>> master
   content: string;
   attachments?: Array<{
     type: 'image' | 'document';
@@ -16,6 +20,7 @@ interface Message {
   }>;
 }
 
+<<<<<<< HEAD
 interface ChatWithUploadsProps {
   placeholder?: string;
 }
@@ -154,3 +159,6 @@ export function ChatWithUploads({ placeholder }: ChatWithUploadsProps) {
     </div>
   );
 }
+=======
+// Rest of the file remains the same...
+>>>>>>> master

@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ArrowRight, Heart, Shield, Users } from 'lucide-react';
+=======
+import { HeroSection } from '@/components/home/hero-section';
+import { FeatureSection } from '@/components/home/feature-section';
+import { TestimonialSection } from '@/components/home/testimonial-section';
+import { QuickAccessSection } from '@/components/home/quick-access-section';
+>>>>>>> master
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+<<<<<<< HEAD
       {/* Hero Section */}
       <section className="py-20 px-4 text-center bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto max-w-4xl">
@@ -68,6 +76,12 @@ function FeatureCard({
       <div className="mb-4 text-primary">{icon}</div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
+=======
+      <HeroSection />
+      <FeatureSection />
+      <TestimonialSection />
+      <QuickAccessSection />
+>>>>>>> master
     </div>
   );
 }

@@ -28,7 +28,14 @@ export function ChatInterface() {
 
     try {
       // TODO: Implement actual LLM API call here
+<<<<<<< HEAD
     const response: Message = { role: 'assistant', content: 'This is a placeholder response. Implement your LLM API here.' };
+=======
+      const response: Message = { 
+        role: 'assistant', 
+        content: 'This is a placeholder response. Implement your LLM API here.' 
+      };
+>>>>>>> master
       setMessages(prev => [...prev, response]);
     } catch (error) {
       console.error('Failed to get response:', error);

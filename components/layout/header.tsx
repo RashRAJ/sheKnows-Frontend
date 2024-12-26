@@ -12,6 +12,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+<<<<<<< HEAD
+=======
+const capitalizeFirstLetter = (string: string) => {
+  return string?.charAt(0).toUpperCase() + string?.slice(1);
+};
+
+>>>>>>> master
 export function Header() {
   const { user, logout } = useAuth();
 
@@ -57,6 +64,7 @@ export function Header() {
           <ModeToggle />
 
           {user ? (
+<<<<<<< HEAD
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -75,6 +83,31 @@ export function Header() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+=======
+            <>
+              <span className="text-sm text-muted-foreground hidden sm:inline-block">
+                👋 Welcome, {capitalizeFirstLetter(user.username)}
+              </span>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <User className="h-4 w-4" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem asChild>
+                    <Link href="/dashboard">Dashboard</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/profile">Profile</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => logout()}>
+                    Logout
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </>
+>>>>>>> master
           ) : (
             <Button asChild variant="default">
               <Link href="/login">Sign In</Link>
